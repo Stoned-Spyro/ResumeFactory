@@ -16,9 +16,11 @@ const routes = [
         component: signup
     }
 ]
+
 const router = new Router({
+    mode: 'history',
+    base: process.env.BASE_URL,
     routes
-}) 
-const app = new Vue({
-    router 
-}).$mount('#app')
+})
+
+export default router;

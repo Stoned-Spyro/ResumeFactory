@@ -1,13 +1,12 @@
-import Vue from 'vue'
-import App from './App.vue'
-import * as firebase from "firebase/app";
-import "firebase/auth";
-import"firebase/database";
-import "firebase/storage";
-import Buefy from 'buefy'
-import 'buefy/dist/buefy.css'
+import Vue from 'vue';
+import App from './App.vue';
+import firebase from "firebase";
+import Buefy from 'buefy';
+import 'buefy/dist/buefy.css';
+import store from './store'
+import router from './router'
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 var firebaseConfig = {
   apiKey: "AIzaSyBhqToV11fypnm86vTfhscYsFo_XpxIK1M",
@@ -18,12 +17,12 @@ var firebaseConfig = {
   messagingSenderId: "247558246897",
   appId: "1:247558246897:web:8c5122879fa3448b3a7450"
 };
-firebase.initializeApp(firebaseConfig)
+firebase.initializeApp(firebaseConfig);
 
+Vue.use(Buefy);
 
-
-Vue.use(Buefy)
-
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+new Vue ({
+  router,
+  store,
+  render: h => h(App)
+}).$mount('#app');
