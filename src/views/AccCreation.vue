@@ -24,7 +24,7 @@ export default {
         signUp: function(){
             firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
                 function (){
-                    alert('Nice! Your account has been creared !')
+                    alert('Nice! Your account has been creared !');
                 },
                 function (err){
                     alert('Oops. '+ err.message)
