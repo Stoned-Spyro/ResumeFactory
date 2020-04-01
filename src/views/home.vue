@@ -1,4 +1,5 @@
 <template>
+<div>
 <nav class="navbar navbar-expand-lg navbar-dark my-bg-navbar fixed-top">
 	<div class="container">
 		<a class="navbar-brand" href="#"><strong>Resume</strong>Factory</a>
@@ -10,14 +11,12 @@
 				<a class="nav-link" href="#">FAQ</a>
 			</li>
 			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				  English
-				</a>
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-				  <a class="dropdown-item" href="#">Ukrainian</a>
-				  <a class="dropdown-item" href="#">Russian</a>
+				<a class="dropdown-item" href="#">Ukrainian</a>
+				<a class="dropdown-item" href="#">Russian</a>
 				</div>
-			  </li>
+			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">Log In</a>
 			</li>
@@ -117,6 +116,7 @@
 		<a class="btn my-btn-secondary" href="#">Build your resume</a>
 	</div>
 </div>
+</div>
 </template>
 
 <script>
@@ -124,34 +124,35 @@ export default {
     name: 'home'
 }
 </script>
-        body {
-	        background: #38324E;
-    	}
-		.my-bg-navbar {
-			background-color: rgba(24, 22, 22, 0.66);
-		}
-		.my-bg-violet {
-			background: #38324E;
-		}
-		.my-bg-pink {
-			background: #DD3E4B;
-		}
-		.my-bg-footer {
-			background: rgba(35, 32, 41, 0.94);
-		}
-
-		.my-btn-main {
-			background-color: white !important;
-			border-radius: 40px !important;
-		}
-		.my-btn-secondary {
-			background-color: #C4C4C4 !important;
-			border-radius: 40px !important;
-		}
-
-		.my-text-opacity {
-			color: #FFFFFF;
-			opacity: 0.7;
-		}
 <style>
+    body {
+	background: #38324E;
+	}
+	.my-bg-navbar {
+		background-color: rgba(24, 22, 22, 0.66);
+	}
+	.my-bg-violet {
+		background: #38324E;
+	}
+	.my-bg-pink {
+		background: #DD3E4B;
+	}
+	.my-bg-footer {
+		background: rgba(35, 32, 41, 0.94);
+	}
+
+	.my-btn-main {
+		background-color: white !important;
+		border-radius: 40px !important;
+	}
+	.my-btn-secondary {
+		background-color: #C4C4C4 !important;
+		border-radius: 40px !important;
+	}
+
+	.my-text-opacity {
+		color: #FFFFFF;
+		opacity: 0.7;
+	}
+
 </style>

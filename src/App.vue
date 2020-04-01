@@ -1,12 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Logo" src="./assets/logo.png">
-    <div id="nav">
-        <router-link to='/login'>Login</router-link>
-        <router-link to='/sign-up'>Create your account</router-link>    
-    </div>
-    <router-view/>
-    <home></home>
+      <router-view/>
   </div>
 </template> 
 

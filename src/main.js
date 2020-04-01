@@ -4,7 +4,7 @@ import firebase from "firebase";
 import FirebaseConfig from './config/firebase'
 import Buefy from 'buefy';
 import 'buefy/dist/buefy.css';
-import store from './store'
+import store from './store/store'
 import router from './router'
 
 Vue.use(Buefy);
