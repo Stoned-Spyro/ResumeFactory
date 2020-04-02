@@ -1,6 +1,6 @@
 <template>
   <div>
-     <nav class ="navbar navbar-expand-lg navabr-dark my=bg-navbar fixed-top">
+     <nav class ="navbar navbar-expand-lg navabr-dark my-bg-navbar fixed-top">
          <div class="container">
              <a class="navbar-brand" href="#">
                  <strong>Resume</strong>
@@ -39,7 +39,6 @@ export default {
 </script>
 
 <style>
-   
     .my-bg-navbar {
 		background-color: rgba(24, 22, 22, 0.66);
     }

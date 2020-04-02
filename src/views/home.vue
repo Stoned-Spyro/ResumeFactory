@@ -1,7 +1,5 @@
 <template>
 <div>
-
-
 <div class="overlay text-white my-bg-violet py-5">
 	<div class="container text-center py-5">
 		<h1 class="my-5">TAKE THE FIRST STEP TO OWN SUCCESS</h1>
@@ -100,10 +98,6 @@ export default {
 }
 </script>
 <style>
-    body {
-	background: #38324E;
-	}
-	
 	.my-bg-violet {
 		background: #38324E;
 	}
