@@ -1,31 +1,6 @@
 <template>
 <div>
-<nav class="navbar navbar-expand-lg navbar-dark my-bg-navbar fixed-top">
-	<div class="container">
-		<a class="navbar-brand" href="#"><strong>Resume</strong>Factory</a>
-		<ul class="navbar-nav ml-auto">
-			<li class="nav-item">
-				<a class="nav-link" href="#">Templates</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">FAQ</a>
-			</li>
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-				<a class="dropdown-item" href="#">Ukrainian</a>
-				<a class="dropdown-item" href="#">Russian</a>
-				</div>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">Log In</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">Sign Up</a>
-			</li>
-		</ul>
-	</div>
-</nav>
+
 
 <div class="overlay text-white my-bg-violet py-5">
 	<div class="container text-center py-5">
@@ -128,9 +103,7 @@ export default {
     body {
 	background: #38324E;
 	}
-	.my-bg-navbar {
-		background-color: rgba(24, 22, 22, 0.66);
-	}
+	
 	.my-bg-violet {
 		background: #38324E;
 	}
