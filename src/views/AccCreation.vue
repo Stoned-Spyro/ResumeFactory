@@ -2,7 +2,7 @@
    <div>Sign Up
        <section>
        <b-field>
-            <b-input placeholder="Email" type="email" required></b-input>
+            <b-input v-model="email" placeholder="Email" type="email" required></b-input>
         </b-field>
 
         <b-field>
@@ -25,7 +25,7 @@
 
         <b-field>
             <b-input placeholder="Number"
-                type="number"
+                type="text"
                 min="10"
                 max="20"
                 required>
@@ -34,6 +34,7 @@
 
         <b-field>
             <b-input placeholder="Password"
+                v-model="password"
                 type="password"
                 min="5"
                 max="15"
@@ -41,6 +42,8 @@
             </b-input>
         </b-field>
     </section>
+    <button @click="signUp">Sign up</button>
+    <p>Or <router-link to='/login'>go back to login</router-link> if u have once</p>
    </div>
 </template>
 
@@ -54,18 +57,19 @@ export default {
     name: 'signUp',
     data(){
         return{
-            Email: '',
+            email: '',
             Name: '',
             Surname: '',
             Number: '',
-            Password: ''
+            password: ''
         }
     },
     methods: {
         signUp: function(){
-            firebase.auth().createUserWithEmailAndPassword(this.Email,this.Name,this.Surname,this.Number,this.Password).then(
+            firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
                 function (){
                     alert('Nice! Your account has been creared !');
+                    this.$router.replace('Home')
                 },
                 function (err){
                     alert('Oops. '+ err.message)

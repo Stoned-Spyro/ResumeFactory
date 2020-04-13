@@ -1,10 +1,13 @@
 import Vue from 'vue'
 import Router  from 'vue-router'
+import firebase from 'firebase'
+
 import Login from './views/login.vue'
 import signup from './views/AccCreation.vue'
 import home from './views/home.vue'
 import faq from './views/FAQ.vue'
 import templates from './views/templates.vue'
+
 Vue.use(Router)
 
 const routes = [
@@ -31,7 +34,10 @@ const routes = [
     {
         path: '/templates',
         name: 'Templates',
-        component: templates    
+        component: templates,    
+        meta:{
+            requiresAuth: true
+        }
     }
 ]
 
@@ -39,5 +45,14 @@ const router = new Router({
     mode: 'history',
     routes
 })
+
+router.beforeEach((to, from, next) =>{
+const currentUser = firebase.auth().currentUser;
+const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+
+if(requiresAuth && !currentUser) next('login');
+else if (!requiresAuth && currentUser) ('Templates');
+else next();
+});
 
 export default router;

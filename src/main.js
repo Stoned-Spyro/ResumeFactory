@@ -12,8 +12,9 @@ Vue.use(Buefy);
 
 Vue.config.productionTip = false;
 
-const fb=firebase.initializeApp(FirebaseConfig);
-fb.firestore()
+const firebaseApp=firebase.initializeApp(FirebaseConfig);
+firebaseApp.firestore()
+
 
 new Vue ({
   router,
