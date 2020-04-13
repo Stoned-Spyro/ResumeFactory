@@ -12,12 +12,18 @@ Vue.use(Buefy);
 
 Vue.config.productionTip = false;
 
+let app = '';
+
 const firebaseApp=firebase.initializeApp(FirebaseConfig);
 firebaseApp.firestore()
 
 
-new Vue ({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app');
+firebase.auth().onAuthStateChanged(()=>{
+  if(!app){
+    app=new Vue ({
+      router,
+      store,
+      render: h => h(App)
+    }).$mount('#app');
+  }
+});
