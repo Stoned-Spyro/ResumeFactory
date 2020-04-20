@@ -37,7 +37,15 @@ const routes = [
         component: templates,    
         meta:{
             requiresAuth: true
-        }
+        },
+        beforeEnter: (to, from, next) =>{
+            const currentUser = firebase.auth().currentUser;
+            const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+            
+            if(requiresAuth && !currentUser) next('login');
+            else if (!requiresAuth && currentUser) ('Templates');
+            else next();
+            }
     }
 ]
 
@@ -46,13 +54,5 @@ const router = new Router({
     routes
 })
 
-router.beforeEach((to, from, next) =>{
-const currentUser = firebase.auth().currentUser;
-const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
-
-if(requiresAuth && !currentUser) next('login');
-else if (!requiresAuth && currentUser) ('Templates');
-else next();
-});
 
 export default router;
