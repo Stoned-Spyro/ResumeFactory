@@ -1,95 +1,45 @@
 <template>
-<div>
-<div class="overlay text-white my-bg-violet py-5">
-	<div class="container text-center py-5">
-		<h1 class="my-5">TAKE THE FIRST STEP TO OWN SUCCESS</h1>
-		<a class="btn my-btn-main" href="#">Create your resume</a>
-	</div>
-</div>
-
-<div class="overlay text-white my-bg-pink py-5">
-	<div class="container text-center py-5">
-		<div class="row">
-			<div class="col-8">
-
-				<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-					<div class="carousel-inner">
-						<div class="carousel-item active">
-							<img class="d-block w-100" src="" alt="First slide">
-						</div>
-						<div class="carousel-item">
-							<img class="d-block w-100" src="" alt="Second slide">
-						</div>
-						<div class="carousel-item">
-							<img class="d-block w-100" src="" alt="Third slide">
-						</div>
-					</div>
-					<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="sr-only">Previous</span>
-					</a>
-					<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="sr-only">Next</span>
-					</a>
-				</div>
-
-			</div>
-			<div class="col-4 my-auto">
-				<p class="lead my-text-opacity">Build a creative resume that will show your potential and skills</p>
-				<a class="btn my-btn-main" href="#">Use free templates</a>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="overlay my-bg-violet py-4">
-	<div class="container text-right">
-		<h3 class="my-text-opacity">How it works?</h3>
-	</div>
-</div>
-
-<div class="overlay bg-light py-5">
-	<div class="container">
-		<div class="row">
-			<div class="col-4">
-				<div class="mx-auto mb-5">
-					<div class="d-flex">
-						<img class="m-auto text-primary" src="">
-					</div>
-					<p class="lead mb-0 text-center">Choose a resume template</p>
+	<body>
+		<section class="hero is-medium my-bg-violet">
+			<div class="hero-body">
+				<div class="container">
+					<h1>TAKE THE FIRST STEP TO OWN SUCCESS</h1>
+					<button class="my-btn-main">Create your resume</button>
 				</div>
 			</div>
-			<div class="col-4">
-				<div class="mx-auto mb-5">
-					<div class="d-flex">
-						<img class="m-auto text-primary" src="">
-					</div>
-					<p class="lead mb-0 text-center">Fill in information about yourself</p>
-				</div>
-			</div>
-			<div class="col-4">
-				<div class="mx-auto mb-0">
-					<div class="d-flex">
-						<img class="m-auto text-primary" src="">
-					</div>
-					<p class="lead mb-0 text-center">Export your resume in PDF</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+		</section>
 
-<div class="overlay my-bg-violet text-white py-5">
-</div>
+		<section class="section is-large my-bg-pink">
+			<div class="container">
+				
+			</div>
+		</section>
 
-<div class="overlay my-bg-footer text-white py-4">
-	<div class="container text-center">
-		<h3 class="my-5 my-text-opacity">Easy to use and done within minutes - try now!</h3>
-		<a class="btn my-btn-secondary" href="#">Build your resume</a>
-	</div>
-</div>
-</div>
+		<section class="section my-bg-violet">
+			<div class="container">
+				<h3 class="my-text-opacity">How it works?</h3>
+			</div>
+		</section>
+
+		<section class="section is-medium my-bg-light">
+			<div class="container">
+				
+			</div>
+		</section>
+
+		<section class="section my-bg-violet">
+			<div class="container">
+				
+			</div>
+		</section>
+
+		<section class="section my-bg-footer">
+			<div class="container">
+				<h3 class="my-text-opacity">Easy to use and done within minutes - try now!</h3>
+				<button class="my-btn-secondary">Build your resume</button>
+			</div>
+		</section>
+	</body>
 </template>
 
 <script>
@@ -121,5 +71,4 @@ export default {
 		color: #FFFFFF;
 		opacity: 0.7;
 	}
-
 </style>
