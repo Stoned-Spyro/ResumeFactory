@@ -1,28 +1,26 @@
 <template>
-  <div>
-     <nav class ="navbar navbar-expand-lg navabr-dark my-bg-navbar fixed-top">
-         <div class="container">
-            <router-link to='/'>
-                 <strong>Resume</strong>
-                 Factory
-            </router-link>
-             <ul class="navbar-nav ml-auto">
-                 <li class="nav-item">
-                     <router-link to='/templates'>Templates</router-link>
-                 </li>
-                 <li class="nav-item">
-                     <router-link to='/faq'>FAQ</router-link>
-                 </li>
-                 <li class="nav-item">
-                    <router-link to='/login'>Log In</router-link>
-                 </li>
-                 <li class="nav-item">
-                     <router-link to='/sign-up'>Sign Up</router-link>
-                 </li>    
-             </ul>    
-         </div>
-     </nav>
-   </div>
+    <b-navbar type="is-dark" :fixed-top="true">
+        <template slot="brand">
+            <b-navbar-item tag="router-link" :to="{ path: '/' }">
+                ResumeFactory
+            </b-navbar-item>
+        </template>
+
+        <template slot="end">
+            <b-navbar-item tag="router-link" :to="{ path: '/templates' }">
+                Templates
+            </b-navbar-item>
+            <b-navbar-item tag="router-link" :to="{ path: '/faq' }">
+                FAQ
+            </b-navbar-item>
+            <b-navbar-item tag="router-link" :to="{ path: '/login' }">
+                Log In
+            </b-navbar-item>
+            <b-navbar-item tag="router-link" :to="{ path: '/sign-up' }">
+                Sign Up
+            </b-navbar-item>
+        </template>
+    </b-navbar>
 </template>
 <script>
 
@@ -35,5 +33,4 @@ export default {
     .my-bg-navbar {
 		background-color: rgba(24, 22, 22, 0.66);
     }
-
 </style>
