@@ -95,9 +95,9 @@ export default {
             iconNext: 'arrow-right',
             iconSize: '',
             carousels: [
-                { title: 'Slide 1', color: 'info' },
-                { title: 'Slide 2', color: 'success' },
-                { title: 'Slide 3', color: 'warning' }
+                {  color: '00ff00' },
+                { color: 'ff0000' },
+                { tcolor: '0000ff' }
             ]
         }
     }

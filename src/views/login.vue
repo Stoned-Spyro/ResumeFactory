@@ -22,8 +22,7 @@ export default {
         login: function(){
             firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
                 function(){
-                    alert('you are now connected');
-                    this.$router.replace('home');
+                    this.$router.push({path:'/'})
                 },
                 function(err){
                     alert('Oops'+err.message)
