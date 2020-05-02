@@ -1,59 +1,61 @@
 <template>
-   <div>Sign Up
-       <form @submit="addUser(email,Name, Surname, PNumber)"> 
-       <section>
-       <b-field>
-            <b-input v-model="email" 
-            placeholder="Email" 
-            type="email" 
-            required>
-            </b-input>
-        </b-field>
-
-        <b-field>
-            <b-input v-model="Name" 
-                placeholder="Name"
-                type="text"
-                min="2"
-                max="15"
-                required>
-            </b-input>
-        </b-field>
-
-        <b-field>
-            <b-input v-model='Surname' 
-                placeholder="Surname"
-                type="text"
-                min="2"
-                max="20"
-                required>
-            </b-input>
-        </b-field>
-
-        <b-field>
-            <b-input v-model="PNumber" 
-                placeholder="Number"
-                type="text"
-                min="10"
-                max="20"
-                required>
-            </b-input>
-        </b-field>
-
-        <b-field>
-            <b-input placeholder="Password"
-                v-model="password"
-                type="password"
-                min="5"
-                max="15"
-                required>
-            </b-input>
-        </b-field>
-    </section>
-    <button type='submit' @click="signUp">Sign up</button>
-    <p>Or <router-link to='/login'>go back to login</router-link> if u have once</p>
-    </form>
-   </div>
+    <body class="my-bg-violet">
+        <section class="hero is-tiny">
+			<div class="hero-body">
+				<div class="container has-text-centered">
+					<h1 class="title is-1 has-text-white"><span class="has-text-weight-bold">Resume</span><span class="has-text-weight-normal">Factory</span></h1>
+				</div>
+			</div>
+		</section>
+        
+        <section class="hero is-tiny">
+			<div class="hero-body">
+                <div class="container">
+                    <div class="columns is-mobile">
+                        <div class="column is-one-third is-offset-one-third">
+                            <form @submit="addUser(email,Name, Surname, PNumber)"> 
+                                <h4 class="title is-4 has-text-danger">Sign in</h4>
+                                <div class="field">
+                                    <div class="control">
+                                        <input class="input is-rounded" v-model="email" placeholder="Email" type="email" required>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="control">
+                                        <input class="input is-rounded" v-model="Name" placeholder="Name" type="text" min="2" max="15" required>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="control">
+                                        <input class="input is-rounded" v-model='Surname' placeholder="Surname" type="text" min="2" max="20" required>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="control">
+                                        <input class="input is-rounded" v-model="PNumber" placeholder="Number" type="text" min="10" max="20" required>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="control">
+                                        <input class="input is-rounded" placeholder="Password" v-model="password" type="password" min="5" max="15" required>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="control has-text-right">
+                                        <button class="button is-danger" type='submit' @click="signUp">Register now</button>
+                                    </div>
+                                </div>
+                                <p class="has-text-white has-text-centered">Or <router-link to='/login' class="has-text-danger">go back to login</router-link> if u have once</p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+			</div>
+		</section> 
+        <section class="hero is-medium">
+			<div class="hero-body"></div>
+		</section>
+    </body>
 </template>
 
 
