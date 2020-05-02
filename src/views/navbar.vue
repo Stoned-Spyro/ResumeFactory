@@ -30,7 +30,5 @@ export default {
 </script>
 
 <style>
-    .my-bg-navbar {
-		background-color: rgba(24, 22, 22, 0.66);
-    }
+
 </style>

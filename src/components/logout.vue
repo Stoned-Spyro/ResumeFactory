@@ -21,5 +21,7 @@ export default {
 </script>
 
 <style>
-
+.logout{
+    margin-top: 20px;
+}
 </style>

@@ -23,7 +23,7 @@ const routes = [
     },
     {
         path: '/',
-        name: 'Home',
+        name: 'home',
         component: home 
     },
     {
@@ -53,6 +53,5 @@ const router = new Router({
     mode: 'history',
     routes
 })
-
 
 export default router;
