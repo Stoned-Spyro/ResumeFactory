@@ -12,7 +12,8 @@
     name: 'app', 
     components: {
       navbar
-      }
+      
+      } 
   }
   
  
