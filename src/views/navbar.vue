@@ -1,3 +1,4 @@
+
 <template>
     <b-navbar type="is-dark" :fixed-top="true" :transparent="true" wrapper-class="container">
         <template slot="brand">
@@ -14,20 +15,41 @@
             <b-navbar-item tag="router-link" :to="{ path: '/faq' }">
                 FAQ
             </b-navbar-item>
-            <b-navbar-item tag="router-link" :to="{ path: '/login' }">
+            <b-navbar-item tag="router-link" :to="{ path: '/myprofile' }" v-if="alreadyMember">
+                My Profile
+            </b-navbar-item>
+            <b-navbar-item tag="router-link" :to="{ path: '/login' }" v-else>
                 Log In
             </b-navbar-item>
-            <b-navbar-item tag="router-link" :to="{ path: '/sign-up' }">
+            <b-navbar-item tag="router-link" :to="{ path: '/logout' }" v-if="alreadyMember">
+                Sign Out
+            </b-navbar-item>
+            <b-navbar-item tag="router-link" :to="{ path: '/sign-up' }" v-else>
                 Sign Up
             </b-navbar-item>
         </template>
     </b-navbar>
 </template>
 <script>
+import firebase from 'firebase'
 
 export default {
-    name: 'navbar'
+    name: 'navbar',
+    data() {
+         const currentUser = firebase.auth().currentUser;
+         if(currentUser){
+             return{
+                 alreadyMember:true,
+             }
+         }else{
+             return{
+                 alreadyMember:false,
+             }
+         }
+    }
+    
 }
+
 </script>
 
 <style>
