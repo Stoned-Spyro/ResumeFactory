@@ -1,6 +1,9 @@
 <template>
     <body class="my-bg-violet">
         <section class="hero is-tiny">
+			<div class="hero-body"></div>
+		</section>
+        <section class="hero is-tiny">
 			<div class="hero-body">
 				<div class="container has-text-centered">
 					<h1 class="title is-1 has-text-white"><span class="has-text-weight-bold">Resume</span><span class="has-text-weight-normal">Factory</span></h1>
@@ -45,7 +48,7 @@
                                         <button class="button is-danger" type='submit' @click="signUp">Register now</button>
                                     </div>
                                 </div>
-                                <p class="has-text-white has-text-centered">Or <router-link to='/login' class="has-text-danger">go back to login</router-link> if u have once</p>
+                                <p class="has-text-white has-text-centered">Or <router-link to='/login' class="has-text-danger">go back to login</router-link> if you have once</p>
                             </form>
                         </div>
                     </div>

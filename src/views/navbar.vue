@@ -1,8 +1,9 @@
 <template>
-    <b-navbar type="is-dark" :fixed-top="true">
+    <b-navbar type="is-dark" :fixed-top="true" :transparent="true" wrapper-class="container">
         <template slot="brand">
             <b-navbar-item tag="router-link" :to="{ path: '/' }">
-                ResumeFactory
+                <span class="has-text-weight-bold">Resume</span>
+                Factory
             </b-navbar-item>
         </template>
 
@@ -30,5 +31,13 @@ export default {
 </script>
 
 <style>
-
+    .my-bg-navbar {
+		background-color: rgba(24, 22, 22, 0.66);
+    }
+    nav.navbar.is-fixed-top {
+        background-color: rgba(24, 22, 22, 0.66);
+    }
+    body{
+        padding-top: 0px!important;
+    }
 </style>
