@@ -8,6 +8,7 @@ import home from './views/home.vue'
 import faq from './views/FAQ.vue'
 import templates from './views/templates.vue'
 
+
 Vue.use(Router)
 
 const routes = [
@@ -46,7 +47,8 @@ const routes = [
             else if (!requiresAuth && currentUser) ('Templates');
             else next();
             }
-    }
+    },
+  
 ]
 
 const router = new Router({
