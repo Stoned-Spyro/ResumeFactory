@@ -1,5 +1,6 @@
 <template>
-    <body class="my-bg-violet">
+
+<div class="my-bg-violet">
         <section class="hero is-tiny">
 			<div class="hero-body"></div>
 		</section>
@@ -42,7 +43,7 @@
         <section class="hero is-medium">
 			<div class="hero-body"></div>
 		</section>
-    </body>
+</div>
 </template>
 
 <script>
@@ -58,10 +59,10 @@ export default {
     methods: {
         login: function(){
             firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
-                function(){
-                    this.$router.push({path:'/'})
+                () => {
+                    this.$router.replace({path:'/'})
                 },
-                function(err){
+                (err)=>{
                     alert('Oops'+err.message)
                 }
             );
@@ -71,7 +72,5 @@ export default {
 </script>
 
 <style scoped>
-    body {
-		background: #38324E;
-	}
+
 </style>

@@ -37,6 +37,11 @@
                                 </div>
                                 <div class="field">
                                     <div class="control">
+                                        <input class="input is-rounded" v-model="Specialization" placeholder="Specialization" type="text">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="control">
                                         <input class="input is-rounded" placeholder="Password" v-model="password" type="password" min="5" max="15" required>
                                     </div>
                                 </div>
@@ -73,7 +78,8 @@ export default {
             Name: '',
             Surname: '',
             PNumber: '',
-            password: ''
+            password: '',
+            Specialization: ''
         }
     },
     firestore(){
@@ -84,17 +90,16 @@ export default {
     methods: {
         signUp: function(){
             firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
-                function (){
-                    alert('Nice! Your account has been creared !');
-                    this.$router.replace('Home')
+                ()=>{
+                    this.$router.replace({path:'/login'})
                 },
-                function (err){
+                (err)=>{
                     alert('Oops. '+ err.message)
                 } 
             );
         },
-        addUser(email, Name, Surname, PNumber){
-            db.collection('users').add({email, Name, Surname, PNumber})
+        addUser(email, Name, Surname, PNumber, Specialization){
+            db.collection('users').add({email, Name, Surname, PNumber, Specialization})
         }
     }
 }

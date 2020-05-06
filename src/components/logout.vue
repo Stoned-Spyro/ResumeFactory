@@ -1,6 +1,6 @@
 <template>
   <div class='logout'>
-      <button @click="logout">Logout</button>
+      <button @click="logout">SignOut</button>
   </div>   
 </template>
 
@@ -21,7 +21,5 @@ export default {
 </script>
 
 <style>
-.logout{
-    margin-top: 20px;
-}
+
 </style>

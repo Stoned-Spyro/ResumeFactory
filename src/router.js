@@ -5,13 +5,23 @@ import firebase from 'firebase'
 import Login from './views/login.vue'
 import signup from './views/AccCreation.vue'
 import home from './views/home.vue'
-import faq from './views/FAQ.vue'
 import templates from './views/templates.vue'
-
+import addInfo from './views/AddInfo.vue'
+import userProfile from './views/userProfile.vue'
 
 Vue.use(Router)
 
 const routes = [
+    {
+        path: '/YourProfile',
+        name: 'userProfile',
+        component: userProfile
+    },
+    {
+        path: '/AddInfo',
+        name: 'addInfo',
+        component: addInfo
+    },
     {
         path: '/login',
         name: 'Login',
@@ -26,11 +36,6 @@ const routes = [
         path: '/',
         name: 'home',
         component: home 
-    },
-    {
-        path: '/faq',
-        name: 'FAQ',
-        component: faq
     },
     {
         path: '/templates',

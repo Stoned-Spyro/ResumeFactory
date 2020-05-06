@@ -1,5 +1,5 @@
 <template>
-  <logout></logout>
+<logout></logout>
 </template>
 
 <script>
@@ -7,7 +7,7 @@ import logout from '../components/logout'
 export default {
     name: 'templates',
     components: {
-        logout,
+      logout
     }
 }
 </script>

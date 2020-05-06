@@ -11,17 +11,14 @@
             <b-navbar-item tag="router-link" :to="{ path: '/templates' }">
                 Templates
             </b-navbar-item>
-            <b-navbar-item tag="router-link" :to="{ path: '/faq' }">
-                FAQ
-            </b-navbar-item>
             <b-navbar-item tag="router-link" :to="{ path: '/myprofile' }" v-if="alreadyMember">
                 My Profile
             </b-navbar-item>
             <b-navbar-item tag="router-link" :to="{ path: '/login' }" v-else>
                 Log In
             </b-navbar-item>
-            <b-navbar-item tag="router-link" :to="{ path: '/logout' }" v-if="alreadyMember">
-                Sign Out
+            <b-navbar-item  v-if="alreadyMember">
+                <logout></logout>
             </b-navbar-item>
             <b-navbar-item tag="router-link" :to="{ path: '/sign-up' }" v-else>
                 Sign Up
@@ -31,9 +28,12 @@
 </template>
 <script>
 import firebase from 'firebase'
-
+import logout from '../components/logout'
 export default {
     name: 'navbar',
+    components: {
+        logout,
+    },
     data() {
          const currentUser = firebase.auth().currentUser;
          if(currentUser){
