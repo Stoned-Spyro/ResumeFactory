@@ -94,7 +94,7 @@ export default {
         signUp: function(){
             firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
                 ()=>{
-                    this.$router.replace({path:'/login'})
+                    this.$router.push({path:'/login'})
                 },
                 (err)=>{
                     alert('Oops. '+ err.message)

@@ -60,7 +60,7 @@ export default {
         login: function(){
             firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
                 () => {
-                    this.$router.replace({path:'/'})
+                    this.$router.push({path:'/'})
                 },
                 (err)=>{
                     alert('Oops'+err.message)
