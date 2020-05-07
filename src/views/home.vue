@@ -49,19 +49,19 @@
 				<div class="columns">
 					<div class="column has-text-centered">		
 						<figure class="image is-128x128">
-							<img src="https://bulma.io/images/placeholders/128x128.png">
+							<img src=".\images\documents.png">
 						</figure>	
 						<p>Choose a resume template</p>
 					</div>
 					<div class="column has-text-centered">
 						<figure class="image is-128x128">
-							<img src="https://bulma.io/images/placeholders/128x128.png">
+							<img src=".\images\notes.png">
 						</figure>
 						<p>Fill in information about yourself</p>
 					</div>
 					<div class="column has-text-centered">
 						<figure class="image is-128x128">
-							<img src="https://bulma.io/images/placeholders/128x128.png">
+							<img src=".\images\png.png">
 						</figure>
 						<p>Export your resume in PDF</p>
 					</div>
