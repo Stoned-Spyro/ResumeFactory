@@ -91,19 +91,22 @@ export default {
         }
     },
     methods: {
-        signUp: function(){
-            firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
+       async signUp(){
+            await firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
                 ()=>{
+                    this.addUser()
                     this.$router.push({path:'/login'})
+
                 },
                 (err)=>{
                     alert('Oops. '+ err.message)
                 } 
             );
         },
-        addUser(email, Name, Surname, PNumber, Specialization){
-            db.collection('users').add({email, Name, Surname, PNumber, Specialization})
-        }
+        // addUser(email, Name, Surname, PNumber, Specialization){
+        //     db.collection('users').add({email, Name, Surname, PNumber, Specialization})
+        // }
+        //переписати
     }
 }
 </script>

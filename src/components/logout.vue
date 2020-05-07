@@ -11,9 +11,10 @@ import firebase from 'firebase';
 export default {
     name: 'logout',
     methods:{
-        logout: function(){
+        logout(){
             firebase.auth().signOut().then(()=>{
-                this.$router.push('login')
+               
+                // this.$router.push('login')
             })
         }
     }
