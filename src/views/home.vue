@@ -13,23 +13,14 @@
 			<div class="container">
 				<div class="columns">
 					<div class="column is-three-fifths">
-						<b-carousel
-							:arrow="arrow"
-							:arrow-both="arrowBoth"
-							:arrow-hover="arrowHover"
-							:icon-pack="iconPack"
-							:icon-prev="iconPrev"
-							:icon-next="iconNext"
-							:icon-size="iconSize">
-							<b-carousel-item v-for="(carousel, i) in carousels" :key="i">
-								<section :class="`hero is-medium is-${carousel.color}`">
-									<div class="hero-body has-text-centered">
-										<h1 class="title">{{carousel.title}}</h1>
-									</div>
-								</section>
-							</b-carousel-item>
-						</b-carousel>
-					</div>
+						<b-carousel>
+						<b-carousel-item v-for="(item, i) in items" :key="i">
+							<div class="image">
+								<img :src="item.image" >
+							</div>
+        </b-carousel-item>
+        </b-carousel>
+							</div>
 					<div class="column has-text-centered">
 						<p class="my-text-opacity">Build a creative resume that will show your potential and skills</p>
 						<button class="button my-btn-main">Use free templates</button>
@@ -87,17 +78,19 @@ export default {
 	name: 'home',
 	data() {
         return {
-            arrow: true,
-            arrowBoth: false,
-            arrowHover: false,
-            iconPack: 'mdi',
-            iconPrev: 'arrow-left',
-            iconNext: 'arrow-right',
-            iconSize: '',
-            carousels: [
-                {  color: '00ff00' },
-                { color: 'ff0000' },
-                { tcolor: '0000ff' }
+            items: [
+				{
+					title: 'Slide 1',
+					image: './images/slide1.png'
+				},
+				{
+					title: 'Slide 2',
+					image: './images/slide2.png'
+				},
+				{
+					title: 'Slide 3',
+					image: './images/slide3.png'
+				},
             ]
         }
     }
