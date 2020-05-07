@@ -50,20 +50,20 @@
 					<div class="column has-text-centered">		
 						<figure class="image is-128x128">
 							<img src="https://bulma.io/images/placeholders/128x128.png">
-							<p>Choose a resume template</p>
-						</figure>
-					</div>
-					<div class="column has-text-centered">
-						<figure class="image is-128x128">
-							<img src="https://bulma.io/images/placeholders/128x128.png">
-							<p>Fill in information about yourself</p>
-						</figure>
-					</div>
-					<div class="column has-text-centered">
-						<figure class="image is-128x128">
-							<img src="https://bulma.io/images/placeholders/128x128.png">
-							<p>Export your resume in PDF</p>
 						</figure>	
+						<p>Choose a resume template</p>
+					</div>
+					<div class="column has-text-centered">
+						<figure class="image is-128x128">
+							<img src="https://bulma.io/images/placeholders/128x128.png">
+						</figure>
+						<p>Fill in information about yourself</p>
+					</div>
+					<div class="column has-text-centered">
+						<figure class="image is-128x128">
+							<img src="https://bulma.io/images/placeholders/128x128.png">
+						</figure>	
+						<p>Export your resume in PDF</p>
 					</div>
 				</div>
 			</div>
