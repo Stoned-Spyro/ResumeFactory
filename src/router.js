@@ -1,11 +1,27 @@
 import Vue from 'vue'
 import Router  from 'vue-router'
+import firebase from 'firebase'
+
 import Login from './views/login.vue'
 import signup from './views/AccCreation.vue'
 import home from './views/home.vue'
+import templates from './views/templates.vue'
+import addInfo from './views/AddInfo.vue'
+import userProfile from './views/userProfile.vue'
+
 Vue.use(Router)
 
 const routes = [
+    {
+        path: '/YourProfile',
+        name: 'userProfile',
+        component: userProfile
+    },
+    {
+        path: '/AddInfo',
+        name: 'addInfo',
+        component: addInfo
+    },
     {
         path: '/login',
         name: 'Login',
@@ -18,9 +34,26 @@ const routes = [
     },
     {
         path: '/',
-        name: 'Home',
+        name: 'home',
         component: home 
-    }
+    },
+    {
+        path: '/templates',
+        name: 'Templates',
+        component: templates,    
+        meta:{
+            requiresAuth: true
+        },
+        beforeEnter: (to, from, next) =>{
+            const currentUser = firebase.auth().currentUser;
+            const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+            
+            if(requiresAuth && !currentUser) next('login');
+            else if (!requiresAuth && currentUser) ('Templates');
+            else next();
+            }
+    },
+  
 ]
 
 const router = new Router({
