@@ -63,7 +63,7 @@ export default {
                     this.$router.push({path:'/'})
                 },
                 (err)=>{
-                    alert('Oops'+err.message)
+                    alert(err.message)
                 }
             );
         }

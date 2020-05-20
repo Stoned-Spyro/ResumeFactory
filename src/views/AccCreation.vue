@@ -95,7 +95,7 @@ export default {
             await firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
                 ()=>{
                     this.addUser()
-                    this.$router.push({path:'/login'})
+                    this.$router.replace({path:'/login'})
 
                 },
                 (err)=>{

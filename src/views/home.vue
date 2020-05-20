@@ -40,19 +40,19 @@
 				<div class="columns">
 					<div class="column has-text-centered">		
 						<figure class="image is-128x128">
-							<img src="../images/documents.png">
+							<img src="./images/documents.png">
 							<p>Choose a resume template</p>
 						</figure>	
 					</div>
 					<div class="column has-text-centered">
 						<figure class="image is-128x128">
-							<img src="../images/notes.png">
+							<img src="./images/notes.png">
 							<p>Fill in information about yourself</p>
 						</figure>
 					</div>
 					<div class="column has-text-centered">
 						<figure class="image is-128x128">
-							<img src="../images/png.png">
+							<img src="./images/png.png">
 							<p>Export your resume in PDF</p>
 						</figure>	
 					</div>
