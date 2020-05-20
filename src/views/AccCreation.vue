@@ -16,7 +16,7 @@
                 <div class="container">
                     <div class="columns is-mobile">
                         <div class="column is-one-third is-offset-one-third">
-                            <form @submit="addUser(email,Name, Surname, PNumber)"> 
+                            <div> 
                                 <h4 class="title is-4 has-text-danger">Sign in</h4>
                                 <div class="field">
                                     <div class="control">
@@ -109,7 +109,7 @@
                                     </div>
                                 </div>
                                 <p class="has-text-white has-text-centered">Or <router-link to='/login' class="has-text-danger">go back to login</router-link> if you have once</p>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -126,7 +126,7 @@
 <script>
 import firebase from 'firebase';
 import {db} from '../main';
-import {required, minLength, maxLength, between,email,numeric} from 'vuelidate/lib/validators'
+import {required, minLength, maxLength,email,numeric} from 'vuelidate/lib/validators'
 
 export default {
     name: 'signUp',
@@ -190,16 +190,41 @@ export default {
     },
     methods: {
        async signUp(){
+           this.$v.$touch()
+           if(this.$v.$invalid){
+               this.$buefy.toast.open({
+                    duration: 5000,
+                    message: `Something's not good, also I'm on bottom`,
+                    position: 'is-bottom',
+                    type: 'is-danger'
+                })
+           }
+           else{
             await firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
-                ()=>{
-                    this.addUser()
-                    this.$router.push({path:'/login'})
+                (res)=>{
+                    db.collection('Users').doc().set({
+                        name:this.Name,
+                        id:res.user.uid
+                    })
+                     this.$buefy.toast.open({
+                    message: 'Something happened correctly!',
+                    type: 'is-success'
+                })
+                    // this.addUser()
+                    // this.$router.push({path:'/login'})
 
                 },
                 (err)=>{
-                    alert('Oops. '+ err.message)
+                    this.$buefy.toast.open({
+                    duration: 5000,
+                    message: err.message,
+                    position: 'is-bottom',
+                    type: 'is-danger'
+                })
+                    // alert('Oops. '+ err.message)
                 } 
             );
+           }
         },
         // addUser(email, Name, Surname, PNumber, Specialization){
         //     db.collection('users').add({email, Name, Surname, PNumber, Specialization})
