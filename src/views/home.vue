@@ -8,28 +8,6 @@
       </div>
     </div>
   </section>
-
-<<<<<<< HEAD
-		<section class="section my-bg-pink">
-			<div class="container">
-				<div class="columns">
-					<div class="column is-three-fifths">
-						<b-carousel>
-						<b-carousel-item v-for="(item, i) in items" :key="i">
-							<div class="image">
-								<img :src="item.image" >
-							</div>
-        </b-carousel-item>
-        </b-carousel>
-							</div>
-					<div class="column has-text-centered">
-						<p class="my-text-opacity">Build a creative resume that will show your potential and skills</p>
-						<button class="button my-btn-main">Use free templates</button>
-					</div>
-				</div>
-			</div>
-		</section>
-=======
   <section class="section my-bg-pink">
     <div class="container">
       <div class="columns">
@@ -58,7 +36,6 @@
       </div>
     </div>
   </section>
->>>>>>> 5e1982893ab7f6ad0278df17d291c7c7475a2ace
 
   <section class="section my-bg-violet">
     <div class="container has-text-centered	">
@@ -66,38 +43,12 @@
     </div>
   </section>
 
-<<<<<<< HEAD
-		<section class="section is-medium my-bg-light">
-			<div class="container">
-				<div class="columns">
-					<div class="column has-text-centered">		
-						<figure class="image is-128x128">
-							<img src="./images/documents.png">
-							<p>Choose a resume template</p>
-						</figure>	
-					</div>
-					<div class="column has-text-centered">
-						<figure class="image is-128x128">
-							<img src="./images/notes.png">
-							<p>Fill in information about yourself</p>
-						</figure>
-					</div>
-					<div class="column has-text-centered">
-						<figure class="image is-128x128">
-							<img src="./images/png.png">
-							<p>Export your resume in PDF</p>
-						</figure>	
-					</div>
-				</div>
-			</div>
-		</section>
-=======
   <div class="columns is-centered">
     <div class="column ">
       <div class="card ">
         <div class="card-image is-flex is-horizontal-center">
           <figure class="image is-128x128">
-            <img src="../images/documents.png" alt="Placeholder image" />
+            <img src="./images/documents.png" alt="Placeholder image" />
           </figure>
         </div>
         <div class="card-content is-flex is-horizontal-center">
@@ -113,7 +64,7 @@
       <div class="card">
         <div class="card-image is-flex is-horizontal-center">
           <figure class="image is-128x128">
-            <img src="../images/notes.png" alt="Placeholder image" />
+            <img src="./images/notes.png" alt="Placeholder image" />
           </figure>
         </div>
         <div class="card-content is-flex is-horizontal-center">
@@ -129,7 +80,7 @@
       <div class="card">
         <div class="card-image is-flex is-horizontal-center">
           <figure class="image is-128x128">
-            <img src="../images/png.png" alt="Placeholder image" />
+            <img src="./images/png.png" alt="Placeholder image" />
           </figure>
         </div>
         <div class="card-content is-flex is-horizontal-center">
@@ -164,7 +115,6 @@
         </div>
       </div>
   </div>-->
->>>>>>> 5e1982893ab7f6ad0278df17d291c7c7475a2ace
 
   <section class="section my-bg-violet"></section>
 
@@ -180,25 +130,6 @@
 
 <script>
 export default {
-<<<<<<< HEAD
-	name: 'home',
-	data() {
-        return {
-            items: [
-				{
-					title: 'Slide 1',
-					image: './images/slide1.png'
-				},
-				{
-					title: 'Slide 2',
-					image: './images/slide2.png'
-				},
-				{
-					title: 'Slide 3',
-					image: './images/slide3.png'
-				},
-            ]
-=======
   name: "home",
   data() {
     return {
@@ -242,7 +173,6 @@ export default {
         {
           title: "Slide 8",
           image: "https://picsum.photos/id/7/1230/500"
->>>>>>> 5e1982893ab7f6ad0278df17d291c7c7475a2ace
         }
       ]
     };
