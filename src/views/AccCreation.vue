@@ -203,11 +203,12 @@ export default {
             await firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
                 (res)=>{
                     db.collection('Users').doc().set({
-                        Name:this.Name,
-                        ID:res.user.uid,
-                        Surname:this.Surname,
+                        name:this.Name,
+                        id:res.user.uid,
+                        email:this.email,
+                        surname:this.Surname,
                         PNumber:this.PNumber,
-                        Specialization:this.Specialization
+                        specialization:this.Specialization
                     })
                      this.$buefy.toast.open({
                     message: 'Something happened correctly!',
