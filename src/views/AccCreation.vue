@@ -16,36 +16,91 @@
                 <div class="container">
                     <div class="columns is-mobile">
                         <div class="column is-one-third is-offset-one-third">
-                            <form @submit="addUser(email,Name, Surname, PNumber)"> 
+                            <div> 
                                 <h4 class="title is-4 has-text-danger">Sign in</h4>
                                 <div class="field">
                                     <div class="control">
-                                        <input class="input is-rounded" v-model="email" placeholder="Email" type="email" required>
+                                        <label>Email</label>
+                                        <input type="email" class="input is-rounded" v-model.trim="$v.email.$model" :class="{
+                                                'is-valid':$v.email.$error, 'is-valid':!$v.email.$invalid}">
+                                        <div class="valid-feedback">Your email is valid!</div>
+                                        <div class="invalid-feedback">
+                                            <span v-if="!$v.email.required">Email is required.</span>
+                                            <span v-if="!$v.email.isUnique">This email is already registered.</span>
+                                        </div>            
                                     </div>
                                 </div>
                                 <div class="field">
                                     <div class="control">
-                                        <input class="input is-rounded" v-model="Name" placeholder="Name" type="text" min="2" max="15" required>
+                                        <label>First Name </label>
+                                        <input type="text" class="input is-rounded"
+                                        v-model.trim="$v.Name.$model" :class="{
+                                            'is-valid':$v.Name.$error, 'is-valid':!$v.Name.$invalid}">
+                                        <div class="valid-feedback">Your first name is valid!</div>
+                                        <div class="invalid-feedback"> 
+                                            <span v-if="!$v.Name.required">First name is required. </span>
+                                            <span v-if="!$v.Name.minLength">First name must be at least {{
+                                                $v.Name.$params.minLength.min}} letters.</span>
+                                            <span v-if="!$v.Name.maxLength">First name must have at most {{
+                                                $v.Name.$params.maxLength.max}} letters.</span>   
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="field">
                                     <div class="control">
-                                        <input class="input is-rounded" v-model='Surname' placeholder="Surname" type="text" min="2" max="20" required>
+                                        <label>Surname Name </label>
+                                        <input type="text" class="input is-rounded"
+                                        v-model.trim="$v.Surname.$model" :class="{
+                                            'is-valid':$v.Surname.$error, 'is-valid':!$v.Surname.$invalid}">
+                                        <div class="valid-feedback">Your Surname name is valid!</div>
+                                        <div class="invalid-feedback"> 
+                                            <span v-if="!$v.Surname.required">Surname name is required. </span>
+                                            <span v-if="!$v.Surname.minLength">Surname name must be at least {{
+                                                $v.Surname.$params.minLength.min}} letters.</span>
+                                            <span v-if="!$v.Surname.maxLength">Surname name must have at most {{
+                                                $v.Surname.$params.maxLength.max}} letters.</span>   
+                                        </div>
+                                    </div>
+                                </div>
+                               <div class="field">
+                                    <div class="control">
+                                        <label>Phone Number</label>
+                                        <input type="number" class="input is-rounded" v-model.number.lazy="$v.PNumber.$model" :class="{
+                                                'is-valid':$v.PNumber.$error, 'is-valid':!$v.PNumber.$invalid}">
+                                        <div class="valid-feedback">Your phone number is valid!</div>
+                                        <div class="invalid-feedback">
+                                            <span v-if="!$v.PNumber.required">Phone number is required.</span>
+                                            <span v-if="!$v.PNumber.numeric">This phone number only numeric accepted.</span>
+                                        </div>            
                                     </div>
                                 </div>
                                 <div class="field">
                                     <div class="control">
-                                        <input class="input is-rounded" v-model="PNumber" placeholder="Number" type="text" min="10" max="20" required>
+                                        <label>Specialization</label>
+                                        <input type="text" class="input is-rounded" v-model.trim="$v.Specialization.$model" :class="{
+                                                'is-valid':$v.Specialization.$error, 'is-valid':!$v.Specialization.$invalid}">
+                                        <div class="valid-feedback">Your Specialization is valid!</div>
+                                        <div class="invalid-feedback">
+                                            <span v-if="!$v.Specialization.required">Specialization is required.</span>
+                                            <span v-if="!$v.Specialization.minLength">Specialization must be at least {{
+                                                $v.Specialization.$params.minLength.min}} symbols.</span>
+                                        </div>            
                                     </div>
                                 </div>
                                 <div class="field">
                                     <div class="control">
-                                        <input class="input is-rounded" v-model="Specialization" placeholder="Specialization" type="text">
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <div class="control">
-                                        <input class="input is-rounded" placeholder="Password" v-model="password" type="password" min="5" max="15" required>
+                                        <label>Password</label>
+                                        <input type="text" class="input is-rounded"
+                                        v-model.trim="$v.password.$model" :class="{
+                                            'is-valid':$v.password.$error, 'is-valid':!$v.password.$invalid}">
+                                        <div class="valid-feedback">Your password is valid!</div>
+                                        <div class="invalid-feedback"> 
+                                            <span v-if="!$v.password.required">Password is required. </span>
+                                            <span v-if="!$v.password.minLength">Password must be at least {{
+                                                $v.password.$params.minLength.min}} symbols.</span>
+                                            <span v-if="!$v.password.maxLength">Password must have at most {{
+                                                $v.password.$params.maxLength.max}} symbols.</span>   
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="field">
@@ -54,7 +109,7 @@
                                     </div>
                                 </div>
                                 <p class="has-text-white has-text-centered">Or <router-link to='/login' class="has-text-danger">go back to login</router-link> if you have once</p>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -71,6 +126,7 @@
 <script>
 import firebase from 'firebase';
 import {db} from '../main';
+import {required, minLength, maxLength,email,numeric} from 'vuelidate/lib/validators'
 
 export default {
     name: 'signUp',
@@ -85,6 +141,48 @@ export default {
             Specialization: ''
         }
     },
+    validations:{
+        email:{
+            required,
+            email,
+            isUnique (value) {
+                if (value === '') return true
+
+                // eslint-disable-next-line
+                var email_regex =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        resolve(email_regex.test(value))
+                    }, 350 + Math.random() * 300)
+                })
+            }
+        },
+        Name:{
+            required,
+            minLength: minLength(3),
+            maxLength: maxLength(10)
+        },
+        Surname:{
+            required,
+            minLength: minLength(5),
+            maxLength: maxLength(12)
+        },
+        password:{
+            required,
+            minLength: minLength(6),
+            maxLength: maxLength(20)
+        },
+        PNumber:{
+            required,
+            numeric,
+            minLength: minLength(12)
+        },
+        Specialization:{
+            required,
+            minLength: minLength(3)
+        }
+    },
     firestore(){
         return{
             users: db.collection('users')
@@ -92,16 +190,41 @@ export default {
     },
     methods: {
        async signUp(){
+           this.$v.$touch()
+           if(this.$v.$invalid){
+               this.$buefy.toast.open({
+                    duration: 5000,
+                    message: `Something's not good, also I'm on bottom`,
+                    position: 'is-bottom',
+                    type: 'is-danger'
+                })
+           }
+           else{
             await firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
-                ()=>{
-                    this.addUser()
-                    this.$router.push({path:'/login'})
+                (res)=>{
+                    db.collection('Users').doc().set({
+                        name:this.Name,
+                        id:res.user.uid
+                    })
+                     this.$buefy.toast.open({
+                    message: 'Something happened correctly!',
+                    type: 'is-success'
+                })
+                    // this.addUser()
+                    // this.$router.push({path:'/login'})
 
                 },
                 (err)=>{
-                    alert('Oops. '+ err.message)
+                    this.$buefy.toast.open({
+                    duration: 5000,
+                    message: err.message,
+                    position: 'is-bottom',
+                    type: 'is-danger'
+                })
+                    // alert('Oops. '+ err.message)
                 } 
             );
+           }
         },
         // addUser(email, Name, Surname, PNumber, Specialization){
         //     db.collection('users').add({email, Name, Surname, PNumber, Specialization})
