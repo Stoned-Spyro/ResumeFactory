@@ -203,17 +203,17 @@ export default {
             await firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
                 (res)=>{
                     db.collection('Users').doc().set({
-                        name:this.Name,
-                        id:res.user.uid
+                        Name:this.Name,
+                        ID:res.user.uid,
+                        Surname:this.Surname,
+                        PNumber:this.PNumber,
+                        Specialization:this.Specialization
                     })
                      this.$buefy.toast.open({
                     message: 'Something happened correctly!',
                     type: 'is-success'
                 })
-                    // this.addUser()
-                    // this.$router.push({path:'/login'})
-
-                },
+            },
                 (err)=>{
                     this.$buefy.toast.open({
                     duration: 5000,
@@ -226,10 +226,6 @@ export default {
             );
            }
         },
-        // addUser(email, Name, Surname, PNumber, Specialization){
-        //     db.collection('users').add({email, Name, Surname, PNumber, Specialization})
-        // }
-        //переписати
     }
 }
 </script>
