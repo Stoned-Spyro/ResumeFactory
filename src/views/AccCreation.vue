@@ -48,7 +48,7 @@
                                 </div>
                                 <div class="field">
                                     <div class="control">
-                                        <label>Surname Name </label>
+                                        <label>Last Name </label>
                                         <input type="text" class="input "
                                         v-model.trim="$v.Surname.$model" :class="{
                                             'is-valid':$v.Surname.$error, 'is-valid':!$v.Surname.$invalid}">
@@ -194,7 +194,7 @@ export default {
            if(this.$v.$invalid){
                this.$buefy.toast.open({
                     duration: 5000,
-                    message: `Something's not good, also I'm on bottom`,
+                    message: `Missing Field`,
                     position: 'is-bottom',
                     type: 'is-danger'
                 })
@@ -210,8 +210,9 @@ export default {
                         PNumber:this.PNumber,
                         specialization:this.Specialization
                     })
+                    this.signIn(this.email,this.password)
                      this.$buefy.toast.open({
-                    message: 'Something happened correctly!',
+                    message: 'Account Created',
                     type: 'is-success'
                 })
             },
@@ -227,6 +228,25 @@ export default {
             );
            }
         },
+        signIn(email,pass){
+             firebase.auth().signInWithEmailAndPassword(email, pass).then(
+                () => {
+                    this.$buefy.toast.open({
+                    message: 'Login Succes',
+                    type: 'is-success'
+                })
+                    this.$router.push({path:'/'})
+                },
+                (err)=>{
+                    this.$buefy.toast.open({
+                    duration: 5000,
+                    message: err.message,
+                    position: 'is-bottom',
+                    type: 'is-danger'
+                })
+                }
+            );
+        }
     }
 }
 </script>
