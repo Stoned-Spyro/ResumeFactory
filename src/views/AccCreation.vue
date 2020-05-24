@@ -132,7 +132,6 @@ export default {
     name: 'signUp',
     data(){
         return{
-            users: [],
             email: '',
             Name: '',
             Surname: '',
@@ -181,11 +180,6 @@ export default {
         Specialization:{
             required,
             minLength: minLength(3)
-        }
-    },
-    firestore(){
-        return{
-            users: db.collection('users')
         }
     },
     methods: {

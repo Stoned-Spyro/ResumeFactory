@@ -8,11 +8,11 @@
     <div class="specialization">Specialization:</div>
     <div class="email">Email:</div>
     <div class="phone_number">Phone number:</div>
-    <input class="name_box">
-    <input class="surname_box">
-    <input class="specialization_box">
-    <input class="email_box">
-    <input class="phone_number_box">
+    <input class="name_box" v-model="name">
+    <input class="surname_box" v-model="surname">
+    <input class="specialization_box" v-model="specialization"> 
+    <input class="email_box" v-model="email">
+    <input class="phone_number_box" v-model="PNumber">
     <div id="line"></div> 
     <div class="specializing_in">Specializing in</div>
     <textarea class="specializing_in_box"></textarea>
@@ -20,21 +20,21 @@
     <div class="skills">Skills:</div>
     <div class="languages">Languages:</div>
     <div class="platforms">Platforms:</div>
-    <input class="languages_box">
-    <input class="platforms_box">
+    <input class="languages_box" v-model="languages">
+    <input class="platforms_box" v-model="platforms">
     <div id="line3"></div>
     <div class="education">Education:</div>
     <div class="institution">Institution:</div>
     <div class="b_s">B. S.:</div>
     <div class="minor">Minor:</div>
-    <input class="institution_box">
-    <input class="b_s_box">
-    <input class="minor_box">
+    <input class="institution_box" v-model="institution">
+    <input class="b_s_box" v-model="b_s">
+    <input class="minor_box" v-model="minor">
     <div id="line4"></div>
     <div class="employment">Employment:</div>
     <div class="project">Projects:</div>
-    <textarea class="employment_box"></textarea>
-    <textarea class="project_box"></textarea>
+    <textarea class="employment_box" v-model="employment"></textarea>
+    <textarea class="project_box" v-model="project"></textarea>
     <div class="download_box"></div>
     <div class="gototemplates_text">Go to templates</div>
     <div class="download_text">Download</div>
@@ -42,8 +42,26 @@
 </template>
 
 <script>
+import {db} from '../main';
+
 export default {
-    name: 'addInfo'
+    name: 'addInfo',
+    data(){
+        return{
+            name: '',
+            surname: '',
+            specialization: '',
+            email:'',
+            PNumber: '',
+            languages: '',
+            platforms:'',
+            institution: '',
+            b_s:'',
+            minor:'',
+            employment:'',
+            project: ''
+        }
+    }
 }
 </script>
 
