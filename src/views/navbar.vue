@@ -36,7 +36,8 @@ export default {
         user:null
      }),
     created(){
-         this.user = firebase.auth().currentUser || false;
+        
+        this.user = firebase.auth().currentUser || false;
 
         console.log(this.user)
     },
@@ -45,7 +46,12 @@ export default {
          logout(){
              firebase.auth().signOut().then(()=>{
                
-                // this.$router.push('login')
+                this.$router.push('/')
+                  this.$buefy.toast.open({
+                    duration: 5000,
+                    message: "Logout Succes",
+                    type: 'is-succes'
+                })
             })
          }
     }

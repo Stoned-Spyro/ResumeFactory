@@ -61,9 +61,19 @@ export default {
             firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
                 () => {
                     this.$router.push({path:'/'})
+                     this.$buefy.toast.open({
+                    duration: 5000,
+                    message: "Login Succes",
+                    type: 'is-succes'
+                })
                 },
                 (err)=>{
-                    alert(err.message)
+                   this.$buefy.toast.open({
+                    duration: 5000,
+                    message: err.message,
+                    position: 'is-bottom',
+                    type: 'is-danger'
+                })
                 }
             );
         }
