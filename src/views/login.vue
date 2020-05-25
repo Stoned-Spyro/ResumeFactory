@@ -32,7 +32,7 @@
                                 <div class="field">
                                     <div class="control">
                                         <label>Password</label>
-                                        <input type="text" class="input "
+                                        <input :type="show === true ? 'text' : 'password'" class="input " id="password"
                                         v-model.trim="$v.password.$model" :class="{
                                             'is-valid':$v.password.$error, 'is-valid':!$v.password.$invalid}">
                                         <div class="valid-feedback" v-if="!$v.password.$invalid">Your password is valid!</div>
@@ -71,7 +71,8 @@ export default {
     data(){
         return {
             email: '',
-            password: ''
+            password: '',
+            show: false
         };
     },
     methods: {
