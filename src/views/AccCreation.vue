@@ -214,7 +214,7 @@ export default {
                     type: 'is-success'
                 })
             },
-                (err)=>{
+                (err)=>{ 
                     this.$buefy.toast.open({
                     duration: 5000,
                     message: err.message,
