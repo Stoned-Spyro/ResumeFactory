@@ -20,7 +20,7 @@ let app = '';
 
 const firebaseApp=firebase.initializeApp(FirebaseConfig);
 export const db = firebaseApp.firestore();
-
+export const storage = firebaseApp.storage()
 
 firebase.auth().onAuthStateChanged(()=>{
   if(!app){

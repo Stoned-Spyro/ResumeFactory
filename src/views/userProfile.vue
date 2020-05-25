@@ -34,20 +34,22 @@
         <div id="eye_icon6"><img src=""></div>
         <div id="arrow6"><img src=""></div>
         <div id="arrow_down"><img src=""></div>
-        <div class="upload_photo">Upload photo</div>
-        <div class="save_changes">Save changes</div>
-        <div class="delete_profile">Delete profile</div>
+        <button @click="uploadPhoto" class="upload_photo">Upload photo</button>
+        <!-- <div class="save_changes">Save changes</div> -->
+        <button @click="deleteProfile" class="save_changes">Delete profile</button>
   </div>
 </template>
 
 <script>
 import {db} from '../main'
-import {currentUser} from '../router'   
+import {currentUser} from '../router' 
+import firebase from 'firebase'  
+// var imagesRef=storage.ref().child('users_photo');
 export default {
     name: 'userProfile',
     data(){
         return{
-            user_name:'madafaka',
+            user_name:'',
             surname:'',
             email:'',
             PNumber:'',
@@ -63,6 +65,37 @@ export default {
             this.PNumber=doc.data().PNumber
             this.specialization=doc.data().specialization
         })
+    },
+    methods:{
+        deleteProfile(){
+            var AreUSure=confirm('Are you sure. Your account will be deleted')
+            if(AreUSure){
+                firebase.auth().currentUser.delete().then(()=>{
+                    this.$buefy.toast.open({
+                    message: 'Your account succesfully deleted',
+                    type: 'is-success'
+                })
+                this.$router.push({path:'/'})
+                 },
+                 (err)=>{
+                    this.$buefy.toast.open({
+                    duration: 5000,
+                    message: err.message,
+                    position: 'is-bottom',
+                    type: 'is-danger'
+                })
+                 }
+                )}
+            else{
+               this.$buefy.toast.open({
+                    message: 'Canceled',
+                    type: 'is-success'
+                })
+            }
+        },
+        // uploadPhoto(){
+        //   var currentUserFolder=imagesRef.parent.child(currentUser.uid)
+        // }
     }
 }
 
