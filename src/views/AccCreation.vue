@@ -64,12 +64,14 @@
                                <div class="field">
                                     <div class="control"> 
                                         <label>Phone Number</label> 
-                                        <input type="number" class="input " v-model.number.lazy="$v.PNumber.$model" :class="{ 
-                                                'is-valid':$v.PNumber.$error, 'is-valid':!$v.PNumber.$invalid}"> 
+                                        <input type="number" class="input" v-model.trim="$v.PNumber.$model" :class="{ 
+                                                'is-invalid':$v.PNumber.$error, 'is-valid':!$v.PNumber.$invalid}"> 
                                         <div class="valid-feedback" v-if="!$v.PNumber.$invalid">Your phone number is valid!</div> 
                                         <div class="invalid-feedback"> 
                                             <span v-if="!$v.PNumber.required">Phone number is required.</span> 
-                                            <span v-if="!$v.PNumber.numeric">This phone number only numeric accepted.</span> 
+                                            <span v-if="!$v.PNumber.numeric">This phone number only numeric accepted.</span>
+                                            <span v-if="!$v.PNumber.minLength">Specialization must be at least {{
+                                                $v.PNumber.$params.minLength.min}} symbols.</span>  
                                         </div>             
                                     </div>
                                 </div>
@@ -98,7 +100,8 @@
                                             <span v-if="!$v.password.minLength">Password must be at least {{
                                                 $v.password.$params.minLength.min}} symbols.</span>
                                             <span v-if="!$v.password.maxLength">Password must have at most {{
-                                                $v.password.$params.maxLength.max}} symbols.</span>   
+                                                $v.password.$params.maxLength.max}} symbols.</span>
+                                              
                                         </div>
                                     </div>
                                 </div>
