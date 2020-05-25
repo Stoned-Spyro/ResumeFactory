@@ -23,10 +23,9 @@
                                         <label>Email</label>
                                         <input type="email" class="input " v-model.trim="$v.email.$model" :class="{
                                                 'is-valid':$v.email.$error, 'is-valid':!$v.email.$invalid}">
-                                        <div class="valid-feedback" v-if="$v.email.$valid">Your email is valid!</div>
+                                        <div class="valid-feedback" v-if="!$v.email.$invalid">Your email is valid!</div>
                                         <div class="invalid-feedback">
                                             <span v-if="!$v.email.required">Email is required.</span>
-                    
                                         </div>            
                                     </div>
                                 </div>
@@ -36,7 +35,7 @@
                                         <input type="text" class="input "
                                         v-model.trim="$v.Name.$model" :class="{
                                             'is-valid':$v.Name.$error, 'is-valid':!$v.Name.$invalid}">
-                                        <div class="valid-feedback">Your first name is valid!</div>
+                                        <div class="valid-feedback" v-if="!$v.Name.$invalid">Your first name is valid!</div>
                                         <div class="invalid-feedback"> 
                                             <span v-if="!$v.Name.required">First name is required. </span>
                                             <span v-if="!$v.Name.minLength">First name must be at least {{
@@ -52,7 +51,7 @@
                                         <input type="text" class="input "
                                         v-model.trim="$v.Surname.$model" :class="{
                                             'is-valid':$v.Surname.$error, 'is-valid':!$v.Surname.$invalid}">
-                                        <div class="valid-feedback">Your Surname name is valid!</div>
+                                        <div class="valid-feedback" v-if="!$v.Surname.$invalid">Your Surname name is valid!</div>
                                         <div class="invalid-feedback"> 
                                             <span v-if="!$v.Surname.required">Surname name is required. </span>
                                             <span v-if="!$v.Surname.minLength">Surname name must be at least {{
@@ -63,15 +62,15 @@
                                     </div>
                                 </div>
                                <div class="field">
-                                    <div class="control">
-                                        <label>Phone Number</label>
-                                        <input type="number" class="input " v-model.number.lazy="$v.PNumber.$model" :class="{
-                                                'is-valid':$v.PNumber.$error, 'is-valid':!$v.PNumber.$invalid}">
-                                        <div class="valid-feedback">Your phone number is valid!</div>
-                                        <div class="invalid-feedback">
-                                            <span v-if="!$v.PNumber.required">Phone number is required.</span>
-                                            <span v-if="!$v.PNumber.numeric">This phone number only numeric accepted.</span>
-                                        </div>            
+                                    <div class="control"> 
+                                        <label>Phone Number</label> 
+                                        <input type="number" class="input " v-model.number.lazy="$v.PNumber.$model" :class="{ 
+                                                'is-valid':$v.PNumber.$error, 'is-valid':!$v.PNumber.$invalid}"> 
+                                        <div class="valid-feedback" v-if="!$v.PNumber.$invalid">Your phone number is valid!</div> 
+                                        <div class="invalid-feedback"> 
+                                            <span v-if="!$v.PNumber.required">Phone number is required.</span> 
+                                            <span v-if="!$v.PNumber.numeric">This phone number only numeric accepted.</span> 
+                                        </div>             
                                     </div>
                                 </div>
                                 <div class="field">
@@ -79,7 +78,7 @@
                                         <label>Specialization</label>
                                         <input type="text" class="input " v-model.trim="$v.Specialization.$model" :class="{
                                                 'is-valid':$v.Specialization.$error, 'is-valid':!$v.Specialization.$invalid}">
-                                        <div class="valid-feedback">Your Specialization is valid!</div>
+                                        <div class="valid-feedback" v-if="!$v.Specialization.$invalid">Your Specialization is valid!</div>
                                         <div class="invalid-feedback">
                                             <span v-if="!$v.Specialization.required">Specialization is required.</span>
                                             <span v-if="!$v.Specialization.minLength">Specialization must be at least {{
@@ -93,7 +92,7 @@
                                         <input type="text" class="input "
                                         v-model.trim="$v.password.$model" :class="{
                                             'is-valid':$v.password.$error, 'is-valid':!$v.password.$invalid}">
-                                        <div class="valid-feedback">Your password is valid!</div>
+                                        <div class="valid-feedback" v-if="!$v.password.$invalid">Your password is valid!</div>
                                         <div class="invalid-feedback"> 
                                             <span v-if="!$v.password.required">Password is required. </span>
                                             <span v-if="!$v.password.minLength">Password must be at least {{

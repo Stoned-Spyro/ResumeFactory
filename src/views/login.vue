@@ -20,12 +20,29 @@
                                 <h4 class="title is-4 has-text-danger">Sign in</h4>
                                 <div class="field">
                                     <div class="control">
-                                        <input class="input is-rounded" v-model='email' required type="text" placeholder="Email">
+                                        <label>Email</label>
+                                        <input type="email" class="input " v-model.trim="$v.email.$model" :class="{
+                                                'is-valid':$v.email.$error, 'is-valid':!$v.email.$invalid}">
+                                        <div class="valid-feedback" v-if="!$v.email.$invalid">Your email is valid!</div>
+                                        <div class="invalid-feedback">
+                                            <span v-if="!$v.email.required">Email is required.</span>
+                                        </div> 
                                     </div>
                                 </div>
                                 <div class="field">
                                     <div class="control">
-                                        <input class="input is-rounded" v-model='password' required type="password" placeholder="password">
+                                        <label>Password</label>
+                                        <input type="text" class="input "
+                                        v-model.trim="$v.password.$model" :class="{
+                                            'is-valid':$v.password.$error, 'is-valid':!$v.password.$invalid}">
+                                        <div class="valid-feedback" v-if="!$v.password.$invalid">Your password is valid!</div>
+                                        <div class="invalid-feedback"> 
+                                            <span v-if="!$v.password.required">Password is required. </span>
+                                            <span v-if="!$v.password.minLength">Password must be at least {{
+                                                $v.password.$params.minLength.min}} symbols.</span>
+                                            <span v-if="!$v.password.maxLength">Password must have at most {{
+                                                $v.password.$params.maxLength.max}} symbols.</span>   
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="field">
@@ -47,6 +64,7 @@
 </template>
 
 <script>
+import {required, minLength, maxLength,email} from 'vuelidate/lib/validators'
 import firebase from 'firebase';
 export default {
     name: 'login',
@@ -76,6 +94,29 @@ export default {
                 })
                 }
             );
+        }
+    },
+    validations:{
+        email:{
+            required,
+            email,
+            isUnique (value) {
+                if (value === '') return true
+
+                // eslint-disable-next-line
+                var email_regex =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        resolve(email_regex.test(value))
+                    }, 350 + Math.random() * 300)
+                })
+            }
+        },
+        password: {
+            required,
+            minLength: minLength(6),
+            maxLength: maxLength(20)
         }
     }
 }
