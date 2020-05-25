@@ -1,11 +1,8 @@
 <template>
 <div id='addInfo'>
     <div class="enter_">Enter your data</div>
-    <div id="gototemplates_box"></div>
-    <div class="arrow"><b>&#8592;</b></div>
     <div class= "uname">Name:</div>
     <div class="surname">Surname:</div>
-    <div class="specialization">Specialization:</div>
     <div class="email">Email:</div>
     <div class="phone_number">Phone number:</div>
     <input class="name_box" v-model="name">
@@ -14,7 +11,7 @@
     <input class="email_box" v-model="email">
     <input class="phone_number_box" v-model="PNumber">
     <div id="line"></div> 
-    <div class="specializing_in">Specializing in</div>
+    <div class="specializing_in">Specializing in:</div>
     <textarea class="specializing_in_box"></textarea>
     <div id="line2"></div>
     <div class="skills">Skills:</div>
@@ -36,7 +33,6 @@
     <textarea class="employment_box" v-model="employment"></textarea>
     <textarea class="project_box" v-model="project"></textarea>
     <div class="download_box"></div>
-    <div class="gototemplates_text">Go to templates</div>
     <div class="download_text">
         <button class="button is-danger" type='submit' @click="addInfo">Download</button>
     </div>
