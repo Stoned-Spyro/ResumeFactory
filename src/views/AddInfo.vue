@@ -44,6 +44,7 @@
 <script>
 import {db} from '../main';
 
+
 export default {
     name: 'addInfo',
     data(){
@@ -59,9 +60,16 @@ export default {
             b_s:'',
             minor:'',
             employment:'',
-            project: ''
+            project: db
         }
-    }
+    },
+    methods: {
+        addInfo(){
+            db.collection('users-resume').doc('Тут має бути ід юзера').set({
+                //дані
+            })
+        }
+    } 
 }
 </script>
 
