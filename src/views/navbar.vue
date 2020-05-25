@@ -9,8 +9,8 @@
         </template>
 
         <template slot="end">
-            <b-navbar-item tag="router-link" :to="{ path: '/templates' }">
-                Templates
+            <b-navbar-item tag="router-link" :to="{ path: '/AddInfo' }">
+                Template
             </b-navbar-item>
             <b-navbar-item tag="router-link" :to="{ path: '/myprofile' }" v-if="user">
                 My Profile

@@ -127,6 +127,7 @@ import firebase from 'firebase';
 import {db} from '../main';
 import {required, minLength, maxLength,email,numeric} from 'vuelidate/lib/validators'
 
+export var CurUser;
 export default {
     name: 'signUp',
     data(){
@@ -203,6 +204,7 @@ export default {
                         PNumber:this.PNumber,
                         specialization:this.Specialization
                     })
+                    CurUser=res.user.uid
                     this.signIn(this.email,this.password)
                      this.$buefy.toast.open({
                     message: 'Account Created',

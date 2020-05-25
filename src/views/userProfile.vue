@@ -6,11 +6,11 @@
         <div class="email">Email:</div>
         <div class="phone_number">Phone number:</div>
         <div class="specialization">Specialization:</div>
-        <input class="name_input">
-        <input class="surname_input">
-        <input class="email_input">
-        <input class="phone_number_input">
-        <input class="specialization_input">
+        <p class="name_input">{{this.user_name}}</p>
+        <p class="surname_input">{{this.surname}}</p>
+        <p class="email_input">{{this.email}}</p>
+        <p class="phone_number_input">{{this.PNumber}}</p>
+        <p class="specialization_input">{{this.specialization}}</p>
         <div class="photo_box"></div>
         <div class="upload_photo_box"></div>
         <div class="save_changes_box"></div>
@@ -41,9 +41,31 @@
 </template>
 
 <script>
+import {db} from '../main'
+import {currentUser} from '../router'   
 export default {
-    name: 'userProfile'
+    name: 'userProfile',
+    data(){
+        return{
+            user_name:'madafaka',
+            surname:'',
+            email:'',
+            PNumber:'',
+            specialization:''
+        }
+    },
+    setData(){
+        db.collection('Users').doc(ref=>ref.where('id','=',currentUser.uid))
+        .get().then(function(doc){
+            this.user_name=doc.data().name
+            this.surname=doc.data().surname
+            this.email=doc.data().email
+            this.PNumber=doc.data().PNumber
+            this.specialization=doc.data().specialization
+        })
+    }
 }
+
 </script>
 
 <style>

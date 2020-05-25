@@ -21,6 +21,7 @@ let app = '';
 const firebaseApp=firebase.initializeApp(FirebaseConfig);
 export const db = firebaseApp.firestore();
 
+
 firebase.auth().onAuthStateChanged(()=>{
   if(!app){
     app=new Vue ({

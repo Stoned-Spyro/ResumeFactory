@@ -37,14 +37,15 @@
     <textarea class="project_box" v-model="project"></textarea>
     <div class="download_box"></div>
     <div class="gototemplates_text">Go to templates</div>
-    <div class="download_text">Download</div>
+    <div class="download_text">
+        <button class="button is-danger" type='submit' @click="addInfo">Download</button>
+    </div>
 </div>
 </template>
 
 <script>
 import {db} from '../main';
-
-
+import {currentUser} from '../router'   
 export default {
     name: 'addInfo',
     data(){
@@ -60,14 +61,30 @@ export default {
             b_s:'',
             minor:'',
             employment:'',
-            project: db
+            project: ''
         }
     },
     methods: {
-        addInfo(){
-            db.collection('users-resume').doc('Тут має бути ід юзера').set({
-                //дані
+         addInfo(){
+            db.collection('users-resume').doc().set({
+                id: currentUser.uid,
+                name: this.name,
+                surname:this.surname,
+                specialization:this.specialization,
+                email:this.email,
+                PNumber:this.PNumber,
+                languages:this.languages,
+                platforms:this.platforms,
+                institution:this.institution,
+                b_s:this.b_s,
+                minor:this.minor,
+                employment:this.employment,
+                project:this.project
             })
+
+            alert('your information has been successfully added')
+
+            this.$router.push({path:'/myprofile'})
         }
     } 
 }

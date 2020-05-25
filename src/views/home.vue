@@ -4,7 +4,7 @@
     <div class="hero-body">
       <div class="container has-text-centered">
         <h1 class="title is-1 has-text-white">TAKE THE FIRST STEP TO OWN SUCCESS</h1>
-        <button class="button my-btn-main">Create your resume</button>
+        <router-link to='/AddInfo' class="button my-btn-main">Create your resume</router-link>
       </div>
     </div>
   </section>
@@ -31,7 +31,6 @@
           <p
             class="my-text-opacity"
           >Build a creative resume that will show your potential and skills</p>
-          <button class="button my-btn-main">Use free templates</button>
         </div>
       </div>
     </div>
@@ -121,7 +120,7 @@
   <section class="section my-bg-footer">
     <div class="container has-text-centered">
       <h3 class="title is-3 my-text-opacity">Easy to use and done within minutes - try now!</h3>
-      <button class="button my-btn-secondary">Build your resume</button>
+      <router-link to='/AddInfo' class="button my-btn-secondary">Build your resume</router-link>
       <p class="my-text-opacity">2020 ResumeFactory</p>
     </div>
   </section>
