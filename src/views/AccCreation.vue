@@ -70,7 +70,7 @@
                                         <div class="invalid-feedback"> 
                                             <span v-if="!$v.PNumber.required">Phone number is required.</span> 
                                             <span v-if="!$v.PNumber.numeric">This phone number only numeric accepted.</span>
-                                            <span v-if="!$v.PNumber.minLength">Specialization must be at least {{
+                                            <span v-if="!$v.PNumber.minLength">Phone number must be at least {{
                                                 $v.PNumber.$params.minLength.min}} symbols.</span>  
                                         </div>             
                                     </div>
