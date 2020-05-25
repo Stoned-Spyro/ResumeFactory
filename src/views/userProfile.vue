@@ -6,11 +6,11 @@
         <div class="email">Email:</div>
         <div class="phone_number">Phone number:</div>
         <div class="specialization">Specialization:</div>
-        <p class="name_input">{{this.user_name}}</p>
-        <p class="surname_input">{{this.surname}}</p>
-        <p class="email_input">{{this.email}}</p>
-        <p class="phone_number_input">{{this.PNumber}}</p>
-        <p class="specialization_input">{{this.specialization}}</p>
+        <p class="name_input">{{user_name}}</p>
+        <p class="surname_input">{{surname}}</p>
+        <p class="email_input">{{email}}</p>
+        <p class="phone_number_input">{{PNumber}}</p>
+        <p class="specialization_input">{{specialization}}</p>
         <div class="photo_box"></div>
         <div class="upload_photo_box"></div>
         <div class="save_changes_box"></div>
@@ -34,7 +34,7 @@
         <div id="eye_icon6"><img src=""></div>
         <div id="arrow6"><img src=""></div>
         <div id="arrow_down"><img src=""></div>
-        <button @click="uploadPhoto" class="upload_photo">Upload photo</button>
+        <button  class="upload_photo">Upload photo</button>
         <!-- <div class="save_changes">Save changes</div> -->
         <button @click="deleteProfile" class="save_changes">Delete profile</button>
   </div>
@@ -42,7 +42,7 @@
 
 <script>
 import {db} from '../main'
-import {currentUser} from '../router' 
+// import {currentUser} from '../router' 
 import firebase from 'firebase'  
 // var imagesRef=storage.ref().child('users_photo');
 export default {
@@ -56,15 +56,24 @@ export default {
             specialization:''
         }
     },
-    setData(){
-        db.collection('Users').doc(ref=>ref.where('id','=',currentUser.uid))
-        .get().then(function(doc){
+      created(){
+           var user = firebase.auth().currentUser.uid
+           console.log(user)
+         db.collection('Users').where('id','==',user)
+        .get()
+        .then(snap => {
+            snap.forEach(doc =>{
+                console.log(doc)
             this.user_name=doc.data().name
             this.surname=doc.data().surname
             this.email=doc.data().email
             this.PNumber=doc.data().PNumber
             this.specialization=doc.data().specialization
+            })
         })
+            
+      
+
     },
     methods:{
         deleteProfile(){
