@@ -16,7 +16,7 @@
                 <div class="container">
                     <div class="columns is-mobile">
                         <div class="column is-one-third is-offset-one-third">
-                            <div> 
+                            <div id="Login"> 
                                 <h4 class="title is-4 has-text-danger">Sign in</h4>
                                 <div class="field">
                                     <div class="control">
@@ -89,7 +89,7 @@
                                 <div class="field">
                                     <div class="control">
                                         <label>Password</label>
-                                        <input type="text" class="input "
+                                        <input :type="show === true ? 'text' : 'password'" class="input " id="password"
                                         v-model.trim="$v.password.$model" :class="{
                                             'is-valid':$v.password.$error, 'is-valid':!$v.password.$invalid}">
                                         <div class="valid-feedback" v-if="!$v.password.$invalid">Your password is valid!</div>
@@ -123,6 +123,7 @@
 
 
 <script>
+
 import firebase from 'firebase';
 import {db} from '../main';
 import {required, minLength, maxLength,email,numeric} from 'vuelidate/lib/validators'
@@ -137,7 +138,8 @@ export default {
             Surname: '',
             PNumber: '',
             password: '',
-            Specialization: ''
+            Specialization: '',
+            show: false
         }
     },
     validations:{
@@ -242,7 +244,8 @@ export default {
                 }
             );
         }
-    }
+    },
+   
 }
 </script>
 
