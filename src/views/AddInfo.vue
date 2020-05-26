@@ -39,7 +39,7 @@
                 <b-input placeholder="UI Design, Animation"  type="text" maxlength="50"  validation-message="This field must have at most 50 letters."></b-input>
             </b-field>
             <b-field label="Languages:">
-                <b-input placeholder="Ukrainian, English"  type="text" maxlength="30" minlength="4" required validation-message="This field  must be at least 4 letters and must have at most 30 letters."></b-input>
+                <b-input placeholder="Ukrainian, English"  type="text" maxlength="30" minlength="4" required validation-message="This field  must be at least 4 letters."></b-input>
             </b-field>
             <b-field label="Platforms:">
                 <b-input placeholder="GitHub"  type="text" maxlength="20"   validation-message="This field must have at most 20 letters."></b-input>
