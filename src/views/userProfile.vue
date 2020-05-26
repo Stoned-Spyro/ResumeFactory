@@ -12,8 +12,6 @@
         <p class="phone_number_input">{{PNumber}}</p>
         <p class="specialization_input">{{specialization}}</p>
         <div class="photo_box"></div>
-        <div class="upload_photo_box"></div>
-        <div class="save_changes_box"></div>
         <div class="your_resumes">Your resumes:</div>
         <div class="example1"></div>
         <div class="example2"></div>
@@ -34,7 +32,6 @@
         <div id="eye_icon6"><img src=""></div>
         <div id="arrow6"><img src=""></div>
         <div id="arrow_down"><img src=""></div>
-        <button  class="upload_photo">Upload photo</button>
         <!-- <div class="save_changes">Save changes</div> -->
         <button @click="deleteProfile" class="save_changes">Delete profile</button>
   </div>
@@ -383,6 +380,8 @@ height: 32px;
 left: 1173px;
 top: 645px;
 
+background:#960019 ;
+color:black;
 font-family: Kodchasan;
 font-style: normal;
 font-weight: normal;
